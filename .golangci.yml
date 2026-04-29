@@ -1,0 +1,21 @@
+# Linter configuration for golangci-lint v1.55+. Deliberately a small set:
+# correctness (errcheck, govet, staticcheck), style (revive), formatting
+# (gofmt, goimports). We don't enable the kitchen sink — most extra linters
+# trade signal for noise on a small codebase like this one.
+
+run:
+  timeout: 5m
+
+linters:
+  disable-all: true
+  enable:
+    - errcheck
+    - govet
+    - staticcheck
+    - revive
+    - gofmt
+    - goimports
+
+linters-settings:
+  goimports:
+    local-prefixes: github.com/alireza19/fleet-monitoring
