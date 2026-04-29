@@ -61,11 +61,7 @@ single-file change in `store.go`.
 
 ## AI tool usage
 
-Used Claude (Claude Code) for scaffolding, Go idiom review during pairing,
-and to draft test tables from `TEST_CASES.md`. Logic and test design driven
-by TDD throughout — every production change had a failing test in front of
-it, including the Phase 2.5 simulator regression. `[Ali — adjust to match
-what actually happened.]`
+Used Claude Code throughout the build, with strict TDD and phased checkpoints. The architecture was designed in a separate research conversation with Claude before implementation began. During the build, I reviewed every code change, pushed back on design choices (e.g., the panic-on-unknown-device contract was made explicit through documented preconditions after my review), and validated test coverage against an independent test-case reference. The Phase 2.5 simulator regression — where the uptime formula was off by one — was diagnosed by feeding the simulator output back to Claude Code and writing a regression test before fixing the production code.
 
 ## Production caveats
 
